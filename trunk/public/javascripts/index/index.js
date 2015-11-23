@@ -37,4 +37,9 @@ $(function(){
 
         e.preventDefault();
     });
+
+    //刷新验证码
+    $("#captcha").click(function(){
+        $("#captcha").attr("src","getCaptcha?v="+Math.random());
+    });
 });
