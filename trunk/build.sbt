@@ -11,7 +11,10 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   filters,
-  specs2 % Test
+  specs2 % Test,
+  "net.sourceforge.jtds"  %      "jtds"     %        "1.3.1",
+  "com.google.code.gson"  %      "gson"     %        "2.4",
+  "com.jolbox"            %      "bonecp"   %        "0.8.0-rc3"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
