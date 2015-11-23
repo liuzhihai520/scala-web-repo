@@ -42,4 +42,9 @@ $(function(){
     $("#captcha").click(function(){
         $("#captcha").attr("src","getCaptcha?v="+Math.random());
     });
+
+    //登陆
+    $("#sub").click(function(){
+       $("#form").submit();
+    });
 });
