@@ -1,13 +1,13 @@
 package core.utils.xutil;
 
+import core.utils.xutil.helper.PairKeyword;
+import core.utils.xutil.helper.PairKeywordComparator;
+
 import java.io.UnsupportedEncodingException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.trunk.util.xutil.helper.PairKeyword;
-import com.trunk.util.xutil.helper.PairKeywordComparator;
 
 /**
  * 字符串工具类

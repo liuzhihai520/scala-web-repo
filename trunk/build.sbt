@@ -12,6 +12,7 @@ libraryDependencies ++= Seq(
   ws,
   filters,
   specs2 % Test,
+  "com.typesafe.play"     %%     "anorm"                    %        "2.4.0",
   "mysql"                 %      "mysql-connector-java"     %        "5.1.37",
   "com.google.code.gson"  %      "gson"                     %        "2.4"
 )

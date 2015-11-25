@@ -1,3 +1,4 @@
+@(loginForm: Form[form.LoginForm])
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,25 +48,34 @@
                                             <fieldset>
                                                 <label class="block clearfix">
                                                     <span class="block input-icon input-icon-right">
-                                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username"  value="@loginForm("username").value"/>
                                                         <i class="ace-icon fa fa-user"></i>
                                                     </span>
+                                                    @if(loginForm("username").hasErrors) {
+                                                        <small><font color="#FF0000" >用户名错误</font></small>
+                                                    }
                                                 </label>
 
                                                 <label class="block clearfix">
                                                     <span class="block input-icon input-icon-right">
-                                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+                                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" value="@loginForm("password").value"/>
                                                         <i class="ace-icon fa fa-lock"></i>
                                                     </span>
+                                                    @if(loginForm("password").hasErrors) {
+                                                        <small><font color="#FF0000">密码错误</font></small>
+                                                    }
                                                 </label>
 
                                                 <div class="space"></div>
 
                                                 <label class="block clearfix">
                                                     <span class="block input-icon input-icon-right">
-                                                        <input type="text" id="code" name="code" placeholder="Code"/>
+                                                        <input type="text" id="code" name="code" placeholder="Code" value="@loginForm("code").value"/>
                                                         <img id="captcha" src="getCaptcha"/>
                                                     </span>
+                                                    @if(loginForm("code").hasErrors) {
+                                                        <small><font color="#FF0000">验证码错误</font></small>
+                                                    }
                                                 </label>
 
                                                 <div class="space"></div>
@@ -76,7 +86,7 @@
                                                         <span class="lbl"> Remember Me</span>
                                                     </label>
 
-                                                    <button type="button" id="sub" class="width-35 pull-right btn btn-sm btn-primary">
+                                                    <button type="submit" id="sub" class="width-35 pull-right btn btn-sm btn-primary">
                                                         <i class="ace-icon fa fa-key"></i>
                                                         <span class="bigger-110">Login</span>
                                                     </button>

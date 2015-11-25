@@ -1,7 +1,8 @@
 package controllers
 
-import core.mvc.{WAction, Action}
-import core.utils.xutil.Validators
+import core.mvc.Action
+import form.LoginForm
+import model.SysUser
 import play.api.mvc.Controller
 
 /**
@@ -15,24 +16,21 @@ class IndexController extends Controller{
 
     //登录首页
     def index = Action{
-        implicit request=>
-        Ok(views.html.index())
+        implicit request =>
+        Ok(views.html.index(LoginForm.loginForm))
     }
 
     //登陆
     def login = Action{
         implicit request =>
-        //表单参数
-        val map = request.body.asFormUrlEncoded
-        //用户名
-        val username = map.get.getOrElse("username",Seq(""))(0)
-        //密码
-        val password = map.get.getOrElse("password",Seq(""))(0)
-        //验证码
-        val code = map.get.getOrElse("code",Seq(""))(0)
-        if(!code.equalsIgnoreCase(request.session.get("vcode").getOrElse("-1"))){
-            //验证码错误
-        }
-        Ok(views.html.index())
+        LoginForm.loginForm.bindFromRequest.fold(
+            error => {
+                BadRequest(views.html.index(error))
+            },
+            data => {
+                SysUser.login(data.username,data.password)
+                Redirect("/")
+            }
+        )
     }
 }

@@ -1,13 +1,13 @@
 package core.utils.xutil;
 
+import core.utils.xutil.interfaces.InSQLProcessor;
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.sql.Types;
-
-import com.trunk.util.xutil.interfaces.InSQLProcessor;
 
 /**
  * JDBC 工具类,

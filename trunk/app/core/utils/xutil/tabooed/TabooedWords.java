@@ -1,13 +1,14 @@
 package core.utils.xutil.tabooed;
 
+import core.utils.xutil.FileUtils;
+import core.utils.xutil.Validators;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.HashSet;
 
-import com.trunk.util.xutil.FileUtils;
-import com.trunk.util.xutil.Validators;
 
 /**
  * 敏感词汇类. 此类会读取资源文件(默认为tabooed.words)中的词汇.

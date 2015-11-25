@@ -1,10 +1,10 @@
 package core.utils.xutil.tabooed;
 
+import core.utils.xutil.Validators;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-
-import com.trunk.util.xutil.Validators;
 
 /**
  * 对文本内容进行敏感词汇过滤的工具类。
