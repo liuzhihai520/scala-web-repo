@@ -1,6 +1,6 @@
 package controllers
 
-import core.mvc.Action
+import core.mvc.{WAction, Action}
 import form.LoginForm
 import model.SysUser
 import play.api.mvc.Controller
