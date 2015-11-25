@@ -53,8 +53,12 @@
                                                         <input type="text" class="form-control" id="username" name="username" placeholder="Username"  value="@loginForm("username").value"/>
                                                         <i class="ace-icon fa fa-user"></i>
                                                     </span>
-                                                    @if(loginForm("username").hasErrors) {
-                                                        <small><font color="#FF0000" >用户名错误</font></small>
+                                                    @{
+                                                        if(loginForm("username").hasErrors) {
+                                                            <small><font color="#FF0000">用户名错误</font></small>
+                                                        }else if(loginForm("usrError").hasErrors){
+                                                            <small><font color="#FF0000">{Messages("Login.error")}</font></small>
+                                                        }
                                                     }
                                                 </label>
 
@@ -75,8 +79,12 @@
                                                         <input type="text" id="code" name="code" placeholder="Code" value="@loginForm("code").value"/>
                                                         <img id="captcha" src="getCaptcha"/>
                                                     </span>
-                                                    @if(loginForm("code").hasErrors) {
-                                                        <small><font color="#FF0000">验证码错误</font></small>
+                                                    @{
+                                                        if(loginForm("code").hasErrors) {
+                                                            <small><font color="#FF0000">验证码错误</font></small>
+                                                        }else if(loginForm("codeError").hasErrors){
+                                                            <small><font color="#FF0000">{loginForm("codeError").error.get.messages}</font></small>
+                                                        }
                                                     }
                                                 </label>
 

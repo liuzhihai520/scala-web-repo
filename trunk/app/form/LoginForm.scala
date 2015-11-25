@@ -14,7 +14,7 @@ case class LoginForm(username:String,password:String,code:String)
 object LoginForm {
     val loginForm = Form(
         mapping(
-            "username" -> nonEmptyText(minLength = 6,maxLength = 20),
+            "username" -> nonEmptyText(minLength = 5,maxLength = 20),
             "password" -> nonEmptyText(minLength = 6,maxLength = 20),
             "code" -> nonEmptyText(minLength = 4,maxLength = 4)
         )(LoginForm.apply)(LoginForm.unapply)

@@ -32,10 +32,11 @@ object SysUser {
     //登录
     def login(username:String,password:String) = DB.withConnection("default",true){
         implicit con =>
-        SQL(
+        val user = SQL(
             """
               |select * from t_sys_user where username = {username} and password = {password}
             """.stripMargin
         ).on('username -> username,'password -> password).as(sysUser.singleOpt)
+        user
     }
 }
