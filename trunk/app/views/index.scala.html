@@ -1,4 +1,6 @@
-@(loginForm: Form[form.LoginForm])
+@(loginForm: Form[form.LoginForm])(implicit data:core.mvc.ViewData[_],lang:Lang)
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,11 +26,10 @@
                         <div class="center">
                             <h1>
                                 <i class="ace-icon fa fa-leaf green"></i>
-                                <span class="red">Ace</span>
-                                <span class="white" id="id-text2">Application</span>
-                                @Messages("")
+                                <span class="red">@Messages("Login.logo")</span>
+                                <span class="white" id="id-text2">@Messages("Login.title")</span>
                             </h1>
-                            <h4 class="blue" id="id-company-text">&copy; Company Name</h4>
+                            <h4 class="blue" id="id-company-text">&copy; @Messages("Login.name")</h4>
                         </div>
 
                         <div class="space-6"></div>

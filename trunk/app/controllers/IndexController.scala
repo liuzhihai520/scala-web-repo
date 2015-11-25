@@ -15,13 +15,13 @@ import play.api.mvc.Controller
 class IndexController extends Controller{
 
     //登录首页
-    def index = Action{
+    def index = WAction{
         implicit request =>
         Ok(views.html.index(LoginForm.loginForm))
     }
 
     //登陆
-    def login = Action{
+    def login = WAction{
         implicit request =>
         LoginForm.loginForm.bindFromRequest.fold(
             error => {
