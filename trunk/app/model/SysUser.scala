@@ -30,7 +30,7 @@ object SysUser {
     }
 
     //登录
-    def login(username:String,password:String) = DB.withConnection("default",true){
+    def login(username:String,password:String) = DB.withConnection(){
         implicit con =>
         val user = SQL(
             """
