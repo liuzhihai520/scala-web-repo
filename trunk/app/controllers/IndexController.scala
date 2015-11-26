@@ -39,7 +39,7 @@ class IndexController extends Controller {
                     if(user == None){
                         BadRequest(views.html.index(LoginForm.loginForm.withError("usrError",Messages("Login.error"))))
                     }else{
-                        Ok()
+                        Ok(views.html.main())
                     }
                 }
             }
