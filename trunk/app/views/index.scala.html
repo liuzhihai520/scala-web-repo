@@ -1,6 +1,4 @@
 @(loginForm: Form[form.LoginForm])(implicit data:core.mvc.ViewData[_],lang:Lang)
-@import play.api.Play.current
-@import play.api.i18n.Messages.Implicits._
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +24,10 @@
                         <div class="center">
                             <h1>
                                 <i class="ace-icon fa fa-leaf green"></i>
-                                <span class="red">@Messages("Login.logo")</span>
-                                <span class="white" id="id-text2">@Messages("Login.title")</span>
+                                <span class="red">Ace</span>
+                                <span class="white" id="id-text2">Application</span>
                             </h1>
-                            <h4 class="blue" id="id-company-text">&copy; @Messages("Login.name")</h4>
+                            <h4 class="blue" id="id-company-text">&copy; Company Name</h4>
                         </div>
 
                         <div class="space-6"></div>
@@ -57,7 +55,7 @@
                                                         if(loginForm("username").hasErrors) {
                                                             <small><font color="#FF0000">用户名错误</font></small>
                                                         }else if(loginForm("usrError").hasErrors){
-                                                            <small><font color="#FF0000">{Messages("Login.error")}</font></small>
+                                                            <small><font color="#FF0000"></font></small>
                                                         }
                                                     }
                                                 </label>
@@ -83,7 +81,7 @@
                                                         if(loginForm("code").hasErrors) {
                                                             <small><font color="#FF0000">验证码错误</font></small>
                                                         }else if(loginForm("codeError").hasErrors){
-                                                            <small><font color="#FF0000">{loginForm("codeError").error.get.messages}</font></small>
+                                                            <small><font color="#FF0000">验证码错误</font></small>
                                                         }
                                                     }
                                                 </label>

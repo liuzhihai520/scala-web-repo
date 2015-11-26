@@ -33,7 +33,7 @@ class IndexController extends Controller {
             data => {
                 val code = dataView.request.session.get("vcode").getOrElse("-1")
                 if(!data.code.equals(code)){
-                    BadRequest(views.html.index(LoginForm.loginForm.withError("codeError","验证码错误")))
+                    BadRequest(views.html.index(LoginForm.loginForm.withError("codeError","")))
                 }else{
                     val user = SysUser.login(data.username,data.password)
                     if(user == None){
